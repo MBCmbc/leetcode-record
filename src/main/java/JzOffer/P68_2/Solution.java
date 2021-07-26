@@ -14,7 +14,7 @@ import Tree.TreeNode;
  /*
 同leetcode P236
 参考大佬解法和代码：https://leetcode-cn.com/problems/er-cha-shu-de-zui-jin-gong-gong-zu-xian-lcof/solution/mian-shi-ti-68-ii-er-cha-shu-de-zui-jin-gong-gon-7/
-通过递归对二叉树进行后续遍历，遇到节点p或节点q时返回。从底至顶回溯，当p，q在root的异侧时，root即为最近公共祖先，则向上返回root。
+通过递归对二叉树进行先序遍历，遇到节点p或节点q时返回。从底至顶回溯，当p，q在root的异侧时，root即为最近公共祖先，则向上返回root。
 最终找到的最近公共祖先将被一层一层地向上返回，直至最外层递归的返回。
 
 时间复杂度：O(N)，N为二叉树节点数，最坏情况下需要遍历整个二叉树。                       打败99.98%
