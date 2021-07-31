@@ -27,12 +27,10 @@ class LRUCache {
 	}
 
 	private HashMap<Integer, DLinkedNode> cache;
-	private int size;
 	private int capacity;
 	private DLinkedNode head, tail;   //dummy头和尾节点
 
 	public LRUCache(int capacity) {     //构造函数，完成初始化
-		size = 0;
 		this.capacity = capacity;
 		cache = new HashMap<>();
 		head = new DLinkedNode();
@@ -60,33 +58,31 @@ class LRUCache {
 			node = new DLinkedNode(key, value);
 			cache.put(key, node);   //1.new一个对应节点node，放入cache。
 			addToHead(node);        //2.将新节点node插入双向链表头部。
-			++size;                 //3.缓存大小size++
-			if(size > capacity){    //4.当size超过容量，执行以下3步：
+			if(cache.size() > capacity){    //4.当size超过容量，执行以下3步：
 				DLinkedNode tailNode = removeTail();    //4.1从双向链表尾部删除一个节点
 				cache.remove(tailNode.key);             //4.2在cache中也删除该尾节点。
-				--size;                                 //4.3缓存大小size--
 			}
 		}
 	}
 
-	void moveToHead(DLinkedNode node){  //节点移动至双向链表头部，分两步：1.当前位置删除该节点，头部添加该节点。
+	private void moveToHead(DLinkedNode node){  //节点移动至双向链表头部，分两步：1.当前位置删除该节点，头部添加该节点。
 		removeNode(node);
 		addToHead(node);
 	}
 
-	void removeNode(DLinkedNode node){  //从双向链表中删除某节点
+	private void removeNode(DLinkedNode node){  //从双向链表中删除某节点
 		node.prev.next = node.next;
 		node.next.prev = node.prev;
 	}
 
-	void addToHead(DLinkedNode node){   //将某节点添加至双向链表头部
-		head.next.prev = node;
-		node.next = head.next;
+	private void addToHead(DLinkedNode node){   //将某节点添加至双向链表头部
 		node.prev = head;
+		node.next = head.next;
+		head.next.prev = node;
 		head.next = node;
 	}
 
-	DLinkedNode removeTail(){  //删除双向链表中最后一个有效节点，即dummy尾节点的前一个节点。
+	private DLinkedNode removeTail(){  //删除双向链表中最后一个有效节点，即dummy尾节点的前一个节点。
 		DLinkedNode tailNode = tail.prev;
 		removeNode(tailNode);
 		return tailNode;
