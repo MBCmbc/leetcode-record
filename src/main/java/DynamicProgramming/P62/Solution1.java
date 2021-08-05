@@ -1,4 +1,4 @@
-package Array.P62;
+package DynamicProgramming.P62;
 
 /*
  自己的解法，动态规划。

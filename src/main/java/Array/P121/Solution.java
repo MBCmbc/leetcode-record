@@ -1,7 +1,7 @@
-package JzOffer.P63;
+package Array.P121;
 
 /**
- 同leetcode p121
+ 同剑指offer p63
  自己的解法：股市挣钱的关键在于低买高卖，所以思路如下：
  1.用minPrice记录到前一天为止的股市最低价
  2.当天股价prices[i]-minPrice就是今天卖出能获取的最高利润
