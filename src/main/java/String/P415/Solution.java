@@ -11,7 +11,7 @@ https://leetcode-cn.com/problems/add-strings/solution/add-strings-shuang-zhi-zhe
 class Solution {
 	public String addStrings(String num1, String num2) {
 		StringBuilder res = new StringBuilder();
-		int i = num1.length()-1, j = num2.length()-1, carry = 0; //i和j是指针，代表目前在num1和num2的第位。carry是进位值。
+		int i = num1.length()-1, j = num2.length()-1, carry = 0; //i和j是指针，代表目前在num1和num2的第几位。carry是进位值。
 		while(i>=0 || j>=0 || carry>0){
 			int x = i>=0 ? num1.charAt(i)-'0' : 0;
 			int y = j>=0 ? num2.charAt(j)-'0' : 0;

@@ -52,7 +52,7 @@ class Solution {
 				if(curr.left != null) q.offer(curr.left);
 				if(curr.right != null) q.offer(curr.right);
 			}
-			if(subList != null) result.add(subList);
+			result.add(subList);
 			//遍历完一层后，在进入下一层之前，修改reverse的值。达到奇偶交替的效果。
 			reverse = !reverse;
 		}

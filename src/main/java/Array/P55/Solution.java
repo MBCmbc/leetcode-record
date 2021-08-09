@@ -1,7 +1,8 @@
 package Array.P55;
 
 /*
-官方题解，方法一。
+官方题解，方法一，贪心。
+https://leetcode-cn.com/problems/jump-game/solution/tiao-yue-you-xi-by-leetcode-solution/
 
 思路：对数组进行一次遍历，维护并实时更新一个变量，用于存储跳跃所能到达的最远位置。如果最远位置超过了数组的最后一个位置，就说明末位可达；相反，如果遍历完后最远位置都达不到数组末位，则返回false。
 
