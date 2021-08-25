@@ -28,7 +28,7 @@ https://leetcode-cn.com/problems/unique-paths/solution/dong-tai-gui-hua-by-powca
 
 import java.util.Arrays;
 
-class Solution {
+class Solution2 {
 	public int uniquePaths(int m, int n) {
 		//定义一维数组表示当前行
 		int[] curr = new int[n];

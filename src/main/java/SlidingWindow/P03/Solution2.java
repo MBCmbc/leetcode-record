@@ -1,4 +1,4 @@
-package DynamicProgramming.P03;
+package SlidingWindow.P03;
 
 import java.util.HashSet;
 
@@ -7,8 +7,8 @@ import java.util.HashSet;
  * 自己的解法，滑动窗口法。
  * 1. 用两个指针l和r分别标记窗口的左边界和右边界（左闭右开），用一个HashSet记录窗口内所有的字符；
  * 2. 每次r所指新字符：
- * a. 若窗口中没有该字符，就加入窗口；
- * b. 若窗口中有该字符，就不断将l右移，直至窗口中没有该字符。
+ *  a. 若窗口中没有该字符，就加入窗口；
+ *  b. 若窗口中有该字符，就不断将l右移，直至窗口中没有该字符。
  * 3. 每次窗口扩大，实时更新记录res
  * <p>
  * 时间复杂度：O(N)，遍历一次字符串。                                                                        打败91.8%
