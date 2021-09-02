@@ -42,10 +42,10 @@ class Solution2 {
     /**
      P84的单调栈解法，直接拿过来用。
      1. 这里的单调栈，就是栈内元素由底至顶必须是单调递增的，如果新来的元素 <= 栈顶元素，就要把栈顶元素出栈，直至栈空。
-     2. 通过单调栈的方式，我们可以确定heights[i]向两遍扩展时，第一个高度小于heights[i]的位置，也就是矩形边界，从而确定heights[i]向两边扩展开来的矩形面积。
+     2. 通过单调栈的方式，我们可以确定heights[i]向两边扩展时，第一个高度小于heights[i]的位置，也就是矩形边界，从而确定heights[i]向两边扩展开来的矩形面积。
      3. 通过从左向右和从右向左两次遍历，我们可以确定每个“矩形”的左右边界，从而确定矩形面积。
      时间复杂度：O(N)
-     空间复杂度：O(N
+     空间复杂度：O(N)
      */
     private int largestRectangleArea(int[] heights) {
         int len = heights.length;
@@ -54,7 +54,7 @@ class Solution2 {
 
         Deque<Integer> stack = new ArrayDeque<>();
         for(int i = 0; i < len; i++){
-            //因为要找第一个高度小于heights[i]的位置，所以要用<=
+            //因为要找第一个高度小于heights[i]的位置，所以要用>=
             while(!stack.isEmpty() && heights[stack.peek()] >= heights[i]){
                 stack.pop();
             }
