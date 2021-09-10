@@ -11,7 +11,7 @@ package Array.P75;
 
 While curr <= p2：
     若 nums[curr] = 0 ：交换第 curr个 和 第p0个 元素，并将指针都向右移。
-    若 nums[curr] = 2 ：交换第 curr个和第 p2个元素，并将 p2指针左移 。
+    若 nums[curr] = 2 ：交换第 curr个和第 p2个元素，并将 p2指针左移。
     若 nums[curr] = 1 ：将指针curr右移。
 
 
@@ -32,7 +32,8 @@ class Solution2 {
 				nums[curr++] = nums[p0];
 				nums[p0++] = tmp;
 			} else if(nums[curr] == 2){
-				//交换第 curr个和第 p2个元素，并将 p2指针左移 。
+				//交换第 curr个和第 p2个元素，并将p2指针左移。
+				//因为换过来的可能还是2，所以curr不能右移。
 				tmp = nums[curr];
 				nums[curr] = nums[p2];
 				nums[p2--] = tmp;

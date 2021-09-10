@@ -12,7 +12,7 @@ import Tree.TreeNode;
  * }
  */
  /*
-同剑指offer思路
+同剑指offer28
 https://leetcode-cn.com/problems/symmetric-tree/solution/dui-cheng-er-cha-shu-by-leetcode-solution/
 用一种对称的先序遍历（根右左），和正常的先序遍历（根左右）对比，遍历出来的序列是一致的，就说明二叉树对称（空节点也要考虑）
 

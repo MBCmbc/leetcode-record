@@ -34,7 +34,7 @@ class Solution {
 		int target = sum/2;
 		//动态规划数组，长为[target+1]，表示和为0~target的“目标值”能否为true。
 		boolean[] dp = new boolean[target+1];
-		//由状态转移方程知，当j==nums[i]，即dp[0]，nums[i]这个数自己恰好被分为单独的一组，故必为true。
+		//目标值为0，所有元素成为一组，空元素集成为一组，即可满足条件。
 		dp[0] = true;
 
 		//nums[0]<=target时，nums[0]自己一个数可以分为一组，表示和为nums[0]的子集，故dp[nums[0]]=true
